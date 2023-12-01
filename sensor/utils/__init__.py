@@ -4,7 +4,16 @@ from sensor.exception import SensorException
 from sensor.config import mongo_client
 import os,sys
 
-def get_collection_as_datframe(database_name:str,collection_name:str)->pd.DataFrame:
+def get_collection_as_dataframe(database_name:str,collection_name:str)->pd.DataFrame:
+    """ 
+    Discription:This function return collection as a dataframe
+    ===========================================================
+    Params:
+    database_name:database name
+    collection_nmae1:collection name
+    ==============================================
+    return Panads dataframe of collection
+    """
     try:
         logging.info(f"Reading data from database:{database_name} and collection: {collection_name}")
         df=pd.DataFrame(list(mongo_client[database_name][collection_name].find()))
