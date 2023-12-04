@@ -8,14 +8,18 @@ class DataIngestionArtifact:
 class DataValidationArtifact:
     report_file_path:str
 
-@ dataclass    
+@dataclass
 class DataTransformationArtifact:
     transform_object_path:str
-    transfored_train_path:str
-    transfored_test_path:str
-    targate_encoder_path:str
+    transformed_train_path:str
+    transformed_test_path:str
+    target_encoder_path:str
 
+@dataclass
+class ModelTrainerArtifact:
+    model_path:str 
+    f1_train_score:float 
+    f1_test_score:float
 
-class ModelTrainerArtifact:...
 class ModelEvalutionArifact:...
 class ModelTrainerArtifact:...

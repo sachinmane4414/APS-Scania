@@ -1,4 +1,3 @@
-
 from sensor import utils
 from sensor.entity import config_entity
 from sensor.entity import artifact_entity
@@ -68,6 +67,9 @@ class DataIngestion:
         except Exception as e:
             raise SensorException(error_message=e, error_detail=sys)
 
+
+
+        
 
 
         
