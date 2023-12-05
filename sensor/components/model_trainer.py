@@ -80,13 +80,9 @@ class ModelTrainer:
 
             #prepare artifact
             logging.info(f"Prepare the artifact")
-            #model_trainer_artifact  = artifact_entity.ModelTrainerArtifact(
-             #   model_path=self.model_trainer_config.model_path, 
-                #f1_train_score=f1_train_score, f1_test_score=f1_test_score)
-            
-            #logging.info(f"Model trainer artifact: {model_trainer_artifact}")
-
-           # return model_trainer_artifact
-       
+            model_trainer_artifact  = artifact_entity.ModelTrainerArtifact(model_path=self.model_trainer_config.model_path, 
+            f1_train_score=f1_train_score, f1_test_score=f1_test_score)
+            logging.info(f"Model trainer artifact: {model_trainer_artifact}")
+            return model_trainer_artifact
         except Exception as e:
             raise SensorException(e, sys)
